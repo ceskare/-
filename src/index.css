@@ -1,0 +1,108 @@
+@import "tailwindcss";
+
+@theme {
+  --font-fantasy: "Philosopher", "MedievalSharp", "Cinzel", "Georgia", serif;
+  --font-serif: "Cormorant Garamond", "EB Garamond", serif;
+  --font-sans: "Rubik", system-ui, -apple-system, sans-serif;
+  --font-numbers: "Rubik", system-ui, monospace;
+}
+
+:root {
+  font-family: var(--font-fantasy);
+  color-scheme: dark;
+}
+
+/* Custom Medieval & Dungeon Background Gradients and Textures */
+.dungeon-bg {
+  background-color: #120a06;
+  background-image: 
+    radial-gradient(circle at 50% 20%, rgba(255, 140, 40, 0.12) 0%, transparent 60%),
+    radial-gradient(circle at 10% 40%, rgba(255, 90, 20, 0.08) 0%, transparent 40%),
+    radial-gradient(circle at 90% 40%, rgba(255, 90, 20, 0.08) 0%, transparent 40%),
+    linear-gradient(180deg, #1f140c 0%, #150c07 45%, #0d0604 100%);
+}
+
+.dungeon-stone-pattern {
+  background-image: 
+    radial-gradient(rgba(0, 0, 0, 0.4) 1px, transparent 1px),
+    radial-gradient(rgba(255, 180, 80, 0.04) 1px, transparent 1px);
+  background-size: 32px 32px, 64px 64px;
+  background-position: 0 0, 16px 16px;
+}
+
+/* Authentic Parchment Texture */
+.parchment-card {
+  background-color: #f7ecd5;
+  background-image: 
+    radial-gradient(circle at 50% 50%, rgba(255, 255, 255, 0.45) 0%, rgba(220, 195, 155, 0.4) 100%),
+    repeating-linear-gradient(0deg, transparent, transparent 3px, rgba(140, 100, 60, 0.03) 3px, rgba(140, 100, 60, 0.03) 6px);
+  box-shadow: 
+    0 4px 14px rgba(0, 0, 0, 0.5),
+    inset 0 0 12px rgba(120, 80, 30, 0.25);
+}
+
+.parchment-gold-border {
+  border: 2px solid #8c6a28;
+  outline: 1px solid #4a3412;
+  box-shadow: 
+    0 0 0 1px #d4af37,
+    0 8px 24px rgba(0, 0, 0, 0.65),
+    inset 0 0 15px rgba(100, 70, 20, 0.3);
+}
+
+/* Torch light flicker animations */
+@keyframes torchFlicker {
+  0%, 100% {
+    opacity: 0.85;
+    transform: scale(1) translateY(0);
+    filter: drop-shadow(0 0 16px rgba(255, 130, 20, 0.5));
+  }
+  25% {
+    opacity: 0.95;
+    transform: scale(1.04) translateY(-1px);
+    filter: drop-shadow(0 0 22px rgba(255, 160, 40, 0.7));
+  }
+  50% {
+    opacity: 0.78;
+    transform: scale(0.97) translateY(1px);
+    filter: drop-shadow(0 0 14px rgba(255, 110, 10, 0.4));
+  }
+  75% {
+    opacity: 0.92;
+    transform: scale(1.02) translateY(0);
+    filter: drop-shadow(0 0 20px rgba(255, 150, 30, 0.6));
+  }
+}
+
+.animate-torch {
+  animation: torchFlicker 3s ease-in-out infinite alternate;
+}
+
+/* 3D Card Depth & Perspective */
+.perspective-1000 {
+  perspective: 1000px;
+}
+
+.preserve-3d {
+  transform-style: preserve-3d;
+}
+
+/* Custom Scrollbar for Hand & Modals */
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+
+::-webkit-scrollbar-track {
+  background: rgba(18, 10, 6, 0.8);
+}
+
+::-webkit-scrollbar-thumb {
+  background: #6d4c2c;
+  border-radius: 3px;
+  border: 1px solid #9c7242;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #9c7242;
+}

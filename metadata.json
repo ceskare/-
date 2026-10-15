@@ -1,0 +1,6 @@
+{
+  "name": "Манчкин: Двери и Сокровища",
+  "description": "Легендарная настольная карточная игра Манчкин онлайн для Яндекс Игр с мультиплеерными комнатами, умными ботами и точными правилами.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
